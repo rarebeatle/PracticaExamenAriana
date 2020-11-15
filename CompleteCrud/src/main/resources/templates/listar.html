@@ -3,19 +3,16 @@
 <head>
 <meta charset="utf-8"></meta>
 <meta http-equiv="Content-Type" content="text/html"></meta>
-<title>Anthologies</title>
+<title>Antologias</title>
 </head>
 <body>
 	<div>
-		<h1>List of Anthologies</h1>
+		<h1>Lista de Antologias</h1>
 		<ul>
 			<div th:each="entry : ${anthologies}">
 				<li>
 					<h4>
-						<span th:text="${entry.name}">Name</span>
-						<span th:text="${subtitulo}">Subtitulo</span>
-						<span th:date="${fechapublicacion}">Fecha de Publicacion</span>
-						<li><a href="/editar">editar</a></li>
+						<span th:text="${entry.name}">Nombre</span>:<span th:text="${entry.subtitulo}">Subtitulo</span>:<span th:text="${entry.fechapublicacion}">Fecha de Publicacion</span><br/>
 					</h4>
 				</li>
 			</div>

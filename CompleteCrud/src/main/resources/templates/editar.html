@@ -1,29 +1,21 @@
-@@ -1,28 +0,0 @@
 <!doctype html>
 <html lang="en-US" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8"></meta>
 <meta http-equiv="Content-Type" content="text/html"></meta>
-<title>Anthologies</title>
+<title>Antologias</title>
 </head>
 <body>
-	<div>
-		<h1>Edit Anthology</h1>
-		<form action="#" 
-  th:action="@{/update/{id}(id=${entry.id})}" 
-  th:object="${anthology}" 
-  method="post">
-    <label for="name">Name</label>
-    <input type="text" th:field="*{name}" id="name" placeholder="Name">
-    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+Editar: #<span th:text="${anthologyToEdit.id}">Id</span>
+<form action="#" th:action="@{/edit/{id}(id=${anthologyToEdit.id})}" th:object="${anthologyToEdit}" method="post">
+    <label for="name">Nombre</label>
+    <input type="text" th:field="*{name}" id="name">
     <label for="subtitulo">Subtitulo</label>
-    <input type="text" th:field="*{subtitulo}" id="subtitulo" placeholder="Subtitulo">
-    <span th:if="${#fields.hasErrors('subtitulo')}" th:errors="*{subtitulo}"></span>
-     <label for="subtitulo">Subtitulo</label>
-    <input type="date" th:field="*{fechapublicacion}" id="fechapublicacion" placeholder="Fecha de Publicacion">
-    <span th:if="${#fields.hasErrors('fechapublicacion')}" th:errors="*{fechapublicacion}"></span>
-    <input type="submit" value="Update Anthology">   
+    <input type="text" th:field="*{subtitulo}" id="subtitulo">
+     <label for="fechapublicacion">Fecha Publicacion</label>
+    <input type="date" th:field="*{fechapublicacion}" id="fechapublicacion">
+     <input type="submit" value="Save Anthology">   
 </form>
-</div>
+
 </body>
 </html>
