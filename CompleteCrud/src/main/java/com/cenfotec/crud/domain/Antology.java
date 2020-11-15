@@ -43,6 +43,7 @@ public class Antology {
 		this.name = name;
 	}
 	
+	
 	public String getSubtitulo() {
 		return subtitulo;
 	}
@@ -58,7 +59,6 @@ public class Antology {
 	public void setFechapublicacion(Date fechapublicacion) {
 		this.fechapublicacion = fechapublicacion;
 	}
-	
 
 	public Set<Article> getArticles() {
 		return articles;
