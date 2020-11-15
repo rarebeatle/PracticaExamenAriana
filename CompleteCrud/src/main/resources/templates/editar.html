@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Anthologies</title>
+</head>
+<body>
+	<div>
+		<h1>Edit Anthology</h1>
+		<form action="#" 
+  th:action="@{/update/{id}(id=${entry.id})}" 
+  th:object="${anthology}" 
+  method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <label for="subtitulo">Subtitulo</label>
+    <input type="text" th:field="*{subtitulo}" id="subtitulo" placeholder="Subtitulo">
+    <span th:if="${#fields.hasErrors('subtitulo')}" th:errors="*{subtitulo}"></span>
+     <label for="subtitulo">Subtitulo</label>
+    <input type="date" th:field="*{fechapublicacion}" id="fechapublicacion" placeholder="Fecha de Publicacion">
+    <span th:if="${#fields.hasErrors('fechapublicacion')}" th:errors="*{fechapublicacion}"></span>
+    <input type="submit" value="Update Anthology">   
+</form>
+</div>
+</body>
+</html>
