@@ -55,7 +55,7 @@ public class AntologyController {
 			model.addAttribute("anthologyToEdit",possibleData.get());
 			return "editar";	
 		}
-		return "notfound";
+		return "noEncontrado";
 	}
 
 	@RequestMapping(value="/edit/{id}",  method = RequestMethod.POST)
@@ -71,7 +71,7 @@ public class AntologyController {
 			model.addAttribute("antologyData",possibleData.get());
 			return "detalle";	
 		}
-		return "notfound";
+		return "noEncontrado";
 	}
 
 	@RequestMapping(value="/agregarArticulo/{id}")
@@ -84,7 +84,7 @@ public class AntologyController {
 			model.addAttribute("article",newArticle);
 			return "agregarArticulo";	
 		}
-		return "notfound";
+		return "noEncontrado";
 	}
 	
 	@RequestMapping(value="/agregarArticulo/{id}", method = RequestMethod.POST)
@@ -95,16 +95,8 @@ public class AntologyController {
 			articleService.save(article);
 			return "index";
 		}
-		return "errorArticle";
-		/*
-		Article newArticle = new Article();
-		if (antology.isPresent()) {
-			Antology updatedAntology = antology.get();
-			updatedAntology.getArticles().add(article);
-			anthologyService.save(updatedAntology);
-			return "listar";	
-		}*/
-		/*return "notfound";*/
+		return "errorArticulo";
+	
 	}
 	
 }
