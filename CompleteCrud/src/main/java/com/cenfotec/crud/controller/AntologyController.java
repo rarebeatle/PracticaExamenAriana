@@ -53,7 +53,7 @@ public class AntologyController {
 		Optional<Antology> possibleData = anthologyService.get(id);
 		if (possibleData.isPresent()) {
 			model.addAttribute("anthologyToEdit",possibleData.get());
-			return "edit";	
+			return "editar";	
 		}
 		return "notfound";
 	}

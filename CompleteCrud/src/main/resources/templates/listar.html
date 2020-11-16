@@ -12,7 +12,14 @@
 			<div th:each="entry : ${anthologies}">
 				<li>
 					<h4>
-						<span th:text="${entry.name}">Nombre</span>:<span th:text="${entry.subtitulo}">Subtitulo</span>:<span th:text="${entry.fechapublicacion}">Fecha de Publicacion</span><br/>
+						<span th:text="${entry.name}">Nombre</span>
+						<span th:text="${entry.subtitulo}">Subtitulo</span>
+						<span th:text="${entry.fechaPublicacion}">Fecha de Publicacion</span>
+						<a th:href="@{/edit/{id}(id=${entry.id})}">Edit</a><br/>
+						<a th:href="@{/detalle/{id}(id=${entry.id})}">Ver todo el detalle</a><br/>
+						
+					
+						<br/>
 					</h4>
 				</li>
 			</div>
